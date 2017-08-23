@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Documentation Index</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.simplex.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">Documentation</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-dfp.html">dfp</a></li><li><a href="module-dfp-ad.html">dfp-ad</a></li><li><a href="module-dfp-audience-pixel.html">dfp-audience-pixel</a></li><li><a href="module-dfp-exclusion.html">dfp-exclusion</a></li><li><a href="module-dfp-id-generator.html">dfp-id-generator</a></li><li><a href="module-dfp-incomplete-error.html">dfp-incomplete-error</a></li><li><a href="module-dfp-refresh.html">dfp-refresh</a></li><li><a href="module-dfp-responsive.html">dfp-responsive</a></li><li><a href="module-dfp-script.html">dfp-script</a></li><li><a href="module-dfp-size.html">dfp-size</a></li><li><a href="module-dfp-targeting.html">dfp-targeting</a></li><li><a href="module-dfp-value.html">dfp-value</a></li><li><a href="module-dfp-video_.html">dfp-video></a></li><li><a href="module-http-error.html">http-error</a></li><li><a href="module-parse-duration.html">parse-duration</a></li><li><a href="module-responsive-resize.html">responsive-resize</a></li><li><a href="module-script-injector.html">script-injector</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-dfp-script-DFPScriptError.html">dfp-script~DFPScriptError</a></li><li><a href="module-dfp-video_-DFPVideoError.html">dfp-video>~DFPVideoError</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html#googletag">googletag</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+    <section class="readme-section">
+        <article><h1>angular-dfp</h1><p>Semantic DoubleClick for Publishers (DFP by Google) integration with AngularJS.</p>
+<pre class="prettyprint source lang-HTML"><code>&lt;dfp-ad force-safe-frame collapse-if-empty ad-unit=&quot;/path/to/my/ad-unit&quot;>
+  &lt;dfp-size width=&quot;728&quot; height=&quot;90&quot;>&lt;/dfp-size>
+&lt;/dfp-ad></code></pre><h2>Description</h2><p>AngularDfp allows you to interact with Google's GPT library and DFP services
+using only Angular directives, effectively replacing any JavaScript to define
+and customize your ad slots, as you usually would. Also, it was built especially
+with infinite-scroll and other dynamic content strategies in mind and has
+out-of-the-box support for it.</p>
+<h2>What does it solve?</h2><p>This library solves two problems:</p>
+<ol>
+<li>You can define your ad slots using only HTML, which is just plain sweet.</li>
+<li>It solves problems that are sometimes encountered with GPT and
+Single-Page-Applications (SPAs) by giving you manual control over when to fetch
+and refresh ads (typically on page redirects within Angular).</li>
+</ol>
+<h2>Examples</h2><p>We have defined (nested) directives that effectively cover all the functionality
+of the GPT library.</p>
+<h3>Simple Fixed Size Ad</h3><p>In the simplest case, you'll simply want to define an ad with a fixed size. In
+that case, you would have a <code>dfp-ad</code> directive, which requires at least one
+nested <code>dfp-size</code> directive. The <code>dfp-ad</code> directive additionally takes some
+optional attributes, such as the <code>collapseEmptyDiv</code> option you may be familiar
+with from the GPT library. For all options, refer to the documentation, which
+can be generated from jsdoc with <code>gulp docs</code>:</p>
+<pre class="prettyprint source lang-HTML"><code>&lt;dfp-ad force-safe-frame
+        collapse-if-empty
+        refresh='3s'
+        ad-unit=&quot;/path/to/my/ad-unit&quot;>
+  &lt;dfp-size width=&quot;728&quot; height=&quot;90&quot;>&lt;/dfp-size>
+&lt;/dfp-ad></code></pre><h2>Demo</h2><p>A live demo can be found at
+<a href="http://angular-dfp-demo.appspot.com">angular-dfp-demo.appspot.com</a>.</p>
+<h2>License</h2><p>This project is released under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache
+License</a>. For more information, see
+the LICENSE file.</p></article>
+    </section>
+
+
+
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
+	
+		on 2017-04-21T11:03:13+03:00
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : false,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
+</body>
+</html>
