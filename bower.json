@@ -1,0 +1,26 @@
+{
+  "name": "angular-dfp",
+  "description": "Semantic DoubleClick integration with AngularJS",
+  "version": "1.0.4",
+  "homepage": "https://github.com/myqbr/angular-dfp",
+  "license": "MIT",
+  "authors": [
+    "myqbr <mpang_89@outlook.com>"
+  ],
+  "main": [
+    "bin/angular-dfp.js"
+  ],
+  "keywords": [
+    "angular",
+    "doubleclick",
+    "google",
+    "ads"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
